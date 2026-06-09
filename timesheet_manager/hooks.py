@@ -5,8 +5,7 @@ app_description = "app to track activities"
 app_email = "abi@gmail.com"
 app_license = "mit"
 
-# Apps
-# ------------------
+# required_apps = []
 
 # required_apps = []
 
