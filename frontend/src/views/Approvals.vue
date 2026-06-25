@@ -223,70 +223,48 @@ function statusPill(s) {
 
 <style scoped>
 .emp-approval-block {
+  @apply rounded-lg overflow-hidden mb-5;
   background: var(--color-background-primary);
   border: 0.5px solid var(--color-border-tertiary);
-  border-radius: var(--border-radius-lg);
-  overflow: hidden;
-  margin-bottom: 20px;
 }
 .emp-approval-header {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 16px 18px;
+  @apply flex items-center justify-between px-[18px] py-4;
   background: var(--color-background-secondary);
   border-bottom: 0.5px solid var(--color-border-tertiary);
 }
-.emp-header-left  { display: flex; align-items: center; gap: 12px; }
-.emp-header-name  { font-size: 14px; font-weight: 600; color: var(--color-text-primary); }
-.emp-header-meta  { font-size: 12px; color: var(--color-text-tertiary); margin-top: 2px; }
-.emp-header-right { display: flex; align-items: center; gap: 10px; }
-.pending-pill {
-  font-size: 11px; font-weight: 500;
-  background: #FAEEDA; color: #854F0B;
-  padding: 3px 12px; border-radius: 20px;
-}
+.emp-header-left  { @apply flex items-center gap-3; }
+.emp-header-name  { @apply text-[14px] font-semibold; color: var(--color-text-primary); }
+.emp-header-meta  { @apply text-[12px] mt-[2px]; color: var(--color-text-tertiary); }
+.emp-header-right { @apply flex items-center gap-[10px]; }
+.pending-pill     { @apply text-[11px] font-medium bg-[#FAEEDA] text-[#854F0B] px-3 py-[3px] rounded-[20px]; }
 
-.day-approval-list { display: flex; flex-direction: column; gap: 0; }
+.day-approval-list  { @apply flex flex-col; }
 .day-approval-block { border-bottom: 0.5px solid var(--color-border-tertiary); }
 .day-approval-block:last-child { border-bottom: none; }
 
 .day-approval-row {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 12px 18px;
-  background: #fafbfc;
+  @apply flex items-center justify-between px-[18px] py-3 bg-[#fafbfc];
   border-bottom: 0.5px solid var(--color-border-tertiary);
 }
-.day-approval-left  { display: flex; align-items: center; gap: 12px; }
-.day-approval-date  { font-size: 13px; font-weight: 600; color: var(--color-text-primary); white-space: nowrap; }
-.day-approval-hours { font-size: 11px; color: var(--color-text-tertiary); }
-.day-approval-actions { display: flex; gap: 6px; }
+.day-approval-left    { @apply flex items-center gap-3; }
+.day-approval-date    { @apply text-[13px] font-semibold whitespace-nowrap; color: var(--color-text-primary); }
+.day-approval-hours   { @apply text-[11px]; color: var(--color-text-tertiary); }
+.day-approval-actions { @apply flex gap-[6px]; }
 
-/* Oval approve button with hover + click effects */
 .day-approval-actions .mini-act-btn.approve-btn,
 .emp-header-right .mini-act-btn.approve-btn {
-  padding: 6px 18px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 500;
-  cursor: pointer;
-  background: #EAF3DE;
-  color: #3B6D11;
-  border: 1px solid #C0DD97;
-  transition: background .15s, transform .1s, box-shadow .15s;
-  user-select: none;
+  @apply px-[18px] py-[6px] rounded-full text-[12px] font-medium cursor-pointer bg-[#EAF3DE] text-[#3B6D11] border border-[#C0DD97] select-none transition-[background,transform,box-shadow] duration-150;
 }
 .day-approval-actions .mini-act-btn.approve-btn:hover,
 .emp-header-right .mini-act-btn.approve-btn:hover {
-  background: #d4ecbe;
-  box-shadow: 0 2px 6px rgba(60,110,17,.18);
+  @apply bg-[#d4ecbe] shadow-[0_2px_6px_rgba(60,110,17,0.18)];
 }
 .day-approval-actions .mini-act-btn.approve-btn:active,
 .emp-header-right .mini-act-btn.approve-btn:active {
-  transform: scale(.96);
-  box-shadow: none;
-  background: #bfe0a0;
+  @apply scale-[0.96] shadow-none bg-[#bfe0a0];
 }
 
-.day-entries { padding: 4px 0; }
+.day-entries { @apply py-1; }
 .day-entries :deep(.entry-row) {
   grid-template-columns: 8px 110px 120px 180px 1fr;
   gap: 0 20px;
@@ -294,11 +272,9 @@ function statusPill(s) {
 }
 
 .empty-entries {
+  @apply rounded-lg p-7 text-center text-[12px] flex items-center justify-center gap-2;
   background: var(--color-background-primary);
   border: 0.5px solid var(--color-border-tertiary);
-  border-radius: var(--border-radius-lg);
-  padding: 28px; text-align: center;
-  font-size: 12px; color: var(--color-text-tertiary);
-  display: flex; align-items: center; justify-content: center; gap: 8px;
+  color: var(--color-text-tertiary);
 }
 </style>

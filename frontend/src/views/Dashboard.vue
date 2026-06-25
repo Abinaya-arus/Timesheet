@@ -386,120 +386,68 @@ function statusPill(s) {
 
 <style scoped>
 .timeline-track {
-  position: relative;
-  height: 42px;
+  @apply relative h-[42px] rounded-lg overflow-hidden mb-2;
   background: var(--color-background-secondary);
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 8px;
 }
 .tl-block {
-  position: absolute;
-  height: 100%;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  padding: 0 8px;
-  font-size: 10px;
-  font-weight: 500;
-  color: #fff;
-  cursor: pointer;
-  transition: filter .15s;
-  overflow: hidden;
-  white-space: nowrap;
+  @apply absolute h-full rounded-md flex items-center px-2 text-[10px] font-medium text-white cursor-pointer transition-[filter] duration-150 overflow-hidden whitespace-nowrap;
 }
-.tl-block:hover { filter: brightness(.9); }
+.tl-block:hover { @apply brightness-90; }
 .tl-empty {
-  height: 42px;
+  @apply h-[42px] rounded-lg flex items-center justify-center text-[11px] mb-2;
   background: var(--color-background-secondary);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
   color: var(--color-text-tertiary);
-  margin-bottom: 8px;
 }
 .timeline-labels {
-  display: flex;
-  justify-content: space-between;
-  font-size: 10px;
+  @apply flex justify-between text-[10px] px-[2px];
   color: var(--color-text-tertiary);
-  padding: 0 2px;
 }
 .empty-entries {
+  @apply rounded-lg p-7 text-center text-[12px] flex items-center justify-center gap-2;
   background: var(--color-background-primary);
   border: 0.5px solid var(--color-border-tertiary);
-  border-radius: var(--border-radius-lg);
-  padding: 28px;
-  text-align: center;
-  font-size: 12px;
   color: var(--color-text-tertiary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
 }
-.day-group { margin-bottom: 14px; }
+.day-group { @apply mb-[14px]; }
 .day-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 7px 14px;
+  @apply flex items-center justify-between px-[14px] py-[7px];
   background: var(--color-background-secondary);
   border: 0.5px solid var(--color-border-tertiary);
-  border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+  border-radius: 6px 6px 0 0;
 }
-.day-header-left { display: flex; align-items: center; gap: 10px; }
-.day-label { font-size: 12px; font-weight: 600; color: var(--color-text-primary); }
-.day-total { font-size: 11px; color: var(--color-text-tertiary); }
-.day-header-right { display: flex; align-items: center; gap: 6px; }
-.day-group .entry-list { border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg); margin-bottom: 0; }
+.day-header-left  { @apply flex items-center gap-[10px]; }
+.day-label        { @apply text-[12px] font-semibold; color: var(--color-text-primary); }
+.day-total        { @apply text-[11px]; color: var(--color-text-tertiary); }
+.day-header-right { @apply flex items-center gap-[6px]; }
+.day-group .entry-list { @apply mb-0; border-radius: 0 0 8px 8px; }
 .mini-act-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 11px;
-  font-weight: 500;
-  cursor: pointer;
+  @apply inline-flex items-center gap-1 px-[10px] py-1 rounded-md text-[11px] font-medium cursor-pointer transition-opacity duration-150;
   border: 0.5px solid;
   font-family: var(--font-sans);
-  transition: opacity .15s;
 }
-.mini-act-btn:hover { opacity: .8; }
-.submit-btn  { background: #E6F1FB; color: #185FA5; border-color: #b3d4f7; }
-.approve-btn { background: #EAF3DE; color: #3B6D11; border-color: #C0DD97; }
-.reject-btn  { background: #FCEBEB; color: #A32D2D; border-color: #F7C1C1; }
-
-/* ── draft entry row ───────────────────────────────────────── */
-.entry-draft { background: #fffdf5; }
+.mini-act-btn:hover { @apply opacity-80; }
+.submit-btn  { @apply bg-[#E6F1FB] text-[#185FA5] border-[#b3d4f7]; }
+.approve-btn { @apply bg-[#EAF3DE] text-[#3B6D11] border-[#C0DD97]; }
+.reject-btn  { @apply bg-[#FCEBEB] text-[#A32D2D] border-[#F7C1C1]; }
+.entry-draft { @apply bg-[#fffdf5]; }
 .entry-actions {
-  display: flex; gap: 5px; align-items: center;
+  @apply flex gap-[5px] items-center;
   grid-column: 6;
 }
 .entry-act-btn {
-  display: inline-flex; align-items: center; gap: 4px;
-  padding: 3px 8px; border-radius: 5px;
-  font-size: 10.5px; font-weight: 500; cursor: pointer;
-  border: 0.5px solid; font-family: var(--font-sans);
-  transition: opacity .15s;
+  @apply inline-flex items-center gap-1 px-2 py-[3px] rounded-[5px] text-[10.5px] font-medium cursor-pointer transition-opacity duration-150;
+  border: 0.5px solid;
+  font-family: var(--font-sans);
 }
-.entry-act-btn:hover { opacity: .8; }
-.edit-btn { background: #F4F5F6; color: #4B5563; border-color: #d1d5db; }
-
-/* ── inline edit form ──────────────────────────────────────── */
+.entry-act-btn:hover { @apply opacity-80; }
+.edit-btn { @apply bg-[#F4F5F6] text-[#4B5563] border-[#d1d5db]; }
 .inline-edit {
-  background: #f8fafc;
+  @apply bg-[#f8fafc] px-[14px] py-3 pl-[30px];
   border-bottom: 0.5px solid var(--color-border-tertiary);
-  padding: 12px 14px 12px 30px;
 }
 .ie-grid {
-  display: grid;
+  @apply grid gap-[10px] mb-[10px];
   grid-template-columns: 1fr 1fr 120px 120px;
-  gap: 10px;
-  margin-bottom: 10px;
 }
-.ie-actions { display: flex; gap: 8px; justify-content: flex-end; }
+.ie-actions { @apply flex gap-2 justify-end; }
 </style>

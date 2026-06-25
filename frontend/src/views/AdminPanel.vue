@@ -70,5 +70,5 @@ function viewEmployee(emp, idx) {
 </script>
 
 <style scoped>
-.emp-cell { display: flex; align-items: center; gap: 8px; }
+.emp-cell { @apply flex items-center gap-2; }
 </style>

@@ -19,15 +19,10 @@ const { isEmployee } = useAuth()
 
 <style scoped>
 .topbar {
+  @apply flex items-center justify-between px-5 h-[52px] flex-shrink-0;
   background: var(--color-background-primary);
   border-bottom: 0.5px solid var(--color-border-tertiary);
-  padding: 0 20px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-shrink: 0;
 }
-.page-title { font-size: 15px; font-weight: 500; color: var(--color-text-primary); }
-.topbar-actions { display: flex; align-items: center; gap: 8px; }
+.page-title    { @apply text-[15px] font-medium; color: var(--color-text-primary); }
+.topbar-actions { @apply flex items-center gap-2; }
 </style>

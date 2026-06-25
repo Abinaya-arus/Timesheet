@@ -92,66 +92,50 @@ const projectStats = computed(() =>
 </script>
 
 <style scoped>
-.add-row {
-  display: flex; align-items: center; gap: 10px;
-  margin-bottom: 18px;
-}
-
+.add-row { @apply flex items-center gap-[10px] mb-[18px]; }
 .proj-card {
+  @apply rounded-lg overflow-hidden mb-[14px];
   background: var(--color-background-primary);
   border: 0.5px solid var(--color-border-tertiary);
-  border-radius: var(--border-radius-lg);
-  overflow: hidden;
-  margin-bottom: 14px;
 }
 .proj-header {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 14px 16px;
+  @apply flex items-center justify-between px-4 py-[14px];
   background: var(--color-background-secondary);
   border-bottom: 0.5px solid var(--color-border-tertiary);
 }
-.proj-header-left { display: flex; align-items: center; gap: 12px; }
+.proj-header-left { @apply flex items-center gap-3; }
 .proj-icon {
-  width: 34px; height: 34px; border-radius: 8px;
+  @apply w-[34px] h-[34px] rounded-lg flex items-center justify-center flex-shrink-0 text-[16px];
   background: var(--color-background-info);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 16px; color: var(--color-text-info);
-  flex-shrink: 0;
+  color: var(--color-text-info);
 }
-.proj-name { font-size: 13px; font-weight: 600; color: var(--color-text-primary); }
-.proj-meta { font-size: 11px; color: var(--color-text-tertiary); margin-top: 2px; }
+.proj-name      { @apply text-[13px] font-semibold; color: var(--color-text-primary); }
+.proj-meta      { @apply text-[11px] mt-[2px]; color: var(--color-text-tertiary); }
 .proj-del-btn {
-  width: 28px; height: 28px; border-radius: 6px;
-  border: 0.5px solid #F7C1C1; background: #FCEBEB;
-  color: #A32D2D; font-size: 14px;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; transition: opacity .15s;
+  @apply w-7 h-7 rounded-md flex items-center justify-center cursor-pointer text-[14px] transition-opacity duration-150;
+  border: 0.5px solid #F7C1C1;
+  background: #FCEBEB;
+  color: #A32D2D;
 }
-.proj-del-btn:hover { opacity: .75; }
-
-.proj-members { display: flex; flex-direction: column; }
+.proj-del-btn:hover { @apply opacity-75; }
+.proj-members { @apply flex flex-col; }
 .member-row {
-  display: flex; align-items: center; gap: 10px;
-  padding: 10px 16px;
+  @apply flex items-center gap-[10px] px-4 py-[10px];
   border-bottom: 0.5px solid var(--color-border-tertiary);
 }
-.member-name  { font-size: 12px; font-weight: 500; color: var(--color-text-primary); flex: 1; }
-.member-dept  { font-size: 11px; color: var(--color-text-tertiary); min-width: 90px; }
-.member-hours { font-size: 12px; font-weight: 500; color: var(--color-text-info); min-width: 40px; text-align: right; }
+.member-name  { @apply text-[12px] font-medium flex-1; color: var(--color-text-primary); }
+.member-dept  { @apply text-[11px] min-w-[90px]; color: var(--color-text-tertiary); }
+.member-hours { @apply text-[12px] font-medium min-w-[40px] text-right; color: var(--color-text-info); }
 .proj-total-row {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 10px 16px;
+  @apply flex items-center justify-between px-4 py-[10px];
   background: var(--color-background-secondary);
 }
-.proj-total-label { font-size: 12px; font-weight: 600; color: var(--color-text-primary); }
-.proj-total-hours { font-size: 13px; font-weight: 700; color: var(--color-text-primary); }
-
+.proj-total-label { @apply text-[12px] font-semibold; color: var(--color-text-primary); }
+.proj-total-hours { @apply text-[13px] font-bold; color: var(--color-text-primary); }
 .empty-entries {
+  @apply rounded-lg p-7 text-center text-[12px] flex items-center justify-center gap-2;
   background: var(--color-background-primary);
   border: 0.5px solid var(--color-border-tertiary);
-  border-radius: var(--border-radius-lg);
-  padding: 28px; text-align: center;
-  font-size: 12px; color: var(--color-text-tertiary);
-  display: flex; align-items: center; justify-content: center; gap: 8px;
+  color: var(--color-text-tertiary);
 }
 </style>

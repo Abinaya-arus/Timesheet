@@ -226,126 +226,71 @@ function resetForm() {
 
 <style scoped>
 .act-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-  margin-bottom: 12px;
+  @apply grid grid-cols-3 gap-[6px] mb-3;
 }
 .act-btn {
-  padding: 7px;
-  border-radius: var(--border-radius-md);
+  @apply py-[7px] rounded-md text-[11px] text-center cursor-pointer transition-all duration-150;
   border: 0.5px solid var(--color-border-tertiary);
   background: var(--color-background-secondary);
-  font-size: 11px;
-  text-align: center;
-  cursor: pointer;
-  transition: all .15s;
   color: var(--color-text-secondary);
 }
 .act-btn:hover,
 .act-btn.selected {
-  border-color: #378ADD;
-  background: #E6F1FB;
-  color: #0C447C;
-  font-weight: 500;
+  @apply border-[#378ADD] bg-[#E6F1FB] text-[#0C447C] font-medium;
 }
-.form-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.task-check {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  color: var(--color-text-secondary);
-  cursor: pointer;
-}
-/* ── time sliders ──────────────────────────────────────────── */
+.form-footer { @apply flex items-center justify-between; }
+.task-check  { @apply flex items-center gap-[6px] text-[12px] cursor-pointer; color: var(--color-text-secondary); }
 .time-sliders {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-bottom: 14px;
-  padding: 14px;
+  @apply flex flex-col gap-[14px] mb-[14px] p-[14px] rounded-md;
   background: var(--color-background-secondary);
-  border-radius: var(--border-radius-md);
 }
-.slider-group { display: flex; flex-direction: column; gap: 6px; }
-.slider-header {
-  display: flex; align-items: center; justify-content: space-between;
-}
+.slider-group  { @apply flex flex-col gap-[6px]; }
+.slider-header { @apply flex items-center justify-between; }
 .slider-time {
-  font-size: 13px; font-weight: 600;
+  @apply text-[13px] font-semibold px-[10px] py-[2px] rounded-[20px];
   color: var(--color-text-info);
   background: var(--color-background-info);
-  padding: 2px 10px; border-radius: 20px;
 }
 .time-slider {
-  width: 100%; height: 4px;
-  -webkit-appearance: none; appearance: none;
+  @apply w-full outline-none cursor-pointer rounded;
+  height: 4px;
+  -webkit-appearance: none;
+  appearance: none;
   background: var(--color-border-secondary);
-  border-radius: 4px; outline: none; cursor: pointer;
 }
 .time-slider::-webkit-slider-thumb {
-  -webkit-appearance: none; appearance: none;
-  width: 18px; height: 18px; border-radius: 50%;
-  background: #378ADD; border: 2px solid #fff;
-  box-shadow: 0 1px 4px rgba(0,0,0,.2); cursor: pointer;
-  transition: background .15s;
+  -webkit-appearance: none;
+  appearance: none;
+  @apply w-[18px] h-[18px] rounded-full cursor-pointer transition-colors duration-150;
+  background: #378ADD;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,.2);
 }
 .time-slider::-webkit-slider-thumb:hover { background: #185fa5; }
 .slider-ticks {
-  display: flex; justify-content: space-between;
-  font-size: 9px; color: var(--color-text-tertiary);
-  padding: 0 2px;
+  @apply flex justify-between text-[9px] px-[2px];
+  color: var(--color-text-tertiary);
 }
 .duration-badge {
-  display: inline-flex; align-items: center; gap: 5px;
-  align-self: flex-end;
-  font-size: 12px; font-weight: 500;
+  @apply inline-flex items-center gap-[5px] self-end text-[12px] font-medium px-3 py-[3px] rounded-[20px];
   color: var(--color-text-info);
   background: var(--color-background-info);
-  padding: 3px 12px; border-radius: 20px;
 }
-.auto-expand {
-  resize: none;
-  overflow: hidden;
-  min-height: 60px;
-}
+.auto-expand { @apply resize-none overflow-hidden min-h-[60px]; }
 .autosave-hint {
-  font-size: 11px;
+  @apply flex items-center gap-[6px] text-[11px] mt-2;
   color: var(--color-text-tertiary);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 8px;
 }
 .empty-state {
+  @apply rounded-lg p-6 text-center text-[12px] flex items-center justify-center gap-2;
   background: var(--color-background-primary);
   border: 0.5px solid var(--color-border-tertiary);
-  border-radius: var(--border-radius-lg);
-  padding: 24px;
-  text-align: center;
-  font-size: 12px;
   color: var(--color-text-tertiary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
 }
-.empty-state i { font-size: 16px; }
+.empty-state i { @apply text-[16px]; }
 .icon-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
+  @apply bg-transparent border-0 cursor-pointer px-1 py-[2px] rounded text-[14px] flex-shrink-0 transition-colors duration-150;
   color: var(--color-text-tertiary);
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-size: 14px;
-  transition: color .15s;
-  flex-shrink: 0;
 }
-.icon-btn:hover { color: #A32D2D; }
+.icon-btn:hover { @apply text-[#A32D2D]; }
 </style>

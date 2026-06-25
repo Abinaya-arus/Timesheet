@@ -17,22 +17,13 @@ import Topbar from './components/Topbar.vue'
 
 <style>
 .app-shell {
-  display: flex;
-  width: 100%;
-  height: 100vh;
+  @apply flex w-full h-screen overflow-hidden;
   background: var(--color-background-tertiary);
-  overflow: hidden;
 }
 .main-area {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  min-width: 0;
+  @apply flex-1 flex flex-col overflow-hidden min-w-0;
 }
 .content-area {
-  flex: 1;
-  overflow-y: auto;
-  padding: 20px;
+  @apply flex-1 overflow-y-auto p-5;
 }
 </style>

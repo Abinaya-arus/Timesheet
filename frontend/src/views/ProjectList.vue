@@ -84,37 +84,29 @@ function cancelEdit() { editingProject.value = null }
 </script>
 
 <style scoped>
-.add-row { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
-
+.add-row { @apply flex items-center gap-[10px] mb-4; }
 .project-row {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 10px 14px; gap: 12px;
+  @apply flex items-center justify-between px-[14px] py-[10px] gap-3;
   border-bottom: 0.5px solid var(--color-border-tertiary);
 }
 .project-row:last-child { border-bottom: none; }
-.proj-name-cell { display: flex; align-items: center; gap: 10px; flex: 1; font-size: 13px; color: var(--color-text-primary); }
-.proj-actions   { display: flex; gap: 5px; flex-shrink: 0; }
-
+.proj-name-cell { @apply flex items-center gap-[10px] flex-1 text-[13px]; color: var(--color-text-primary); }
+.proj-actions   { @apply flex gap-[5px] flex-shrink-0; }
 .proj-btn {
-  width: 26px; height: 26px; border-radius: 5px;
+  @apply w-[26px] h-[26px] rounded-[5px] flex items-center justify-center cursor-pointer text-[13px] transition-opacity duration-150;
   border: 0.5px solid var(--color-border-tertiary);
   background: var(--color-background-secondary);
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; font-size: 13px; transition: opacity .15s;
   color: var(--color-text-secondary);
 }
-.proj-btn:hover { opacity: .75; }
-.edit-btn   { color: #185FA5; background: #E6F1FB; border-color: #b3d4f7; }
-.del-btn    { color: #A32D2D; background: #FCEBEB; border-color: #F7C1C1; }
-.save-btn   { color: #3B6D11; background: #EAF3DE; border-color: #C0DD97; }
-.cancel-btn { color: #854F0B; background: #FAEEDA; border-color: #f0cc9a; }
-
+.proj-btn:hover  { @apply opacity-75; }
+.edit-btn        { @apply text-[#185FA5] bg-[#E6F1FB] border-[#b3d4f7]; }
+.del-btn         { @apply text-[#A32D2D] bg-[#FCEBEB] border-[#F7C1C1]; }
+.save-btn        { @apply text-[#3B6D11] bg-[#EAF3DE] border-[#C0DD97]; }
+.cancel-btn      { @apply text-[#854F0B] bg-[#FAEEDA] border-[#f0cc9a]; }
 .empty-entries {
+  @apply rounded-lg p-7 text-center text-[12px] flex items-center justify-center gap-2;
   background: var(--color-background-primary);
   border: 0.5px solid var(--color-border-tertiary);
-  border-radius: var(--border-radius-lg);
-  padding: 28px; text-align: center;
-  font-size: 12px; color: var(--color-text-tertiary);
-  display: flex; align-items: center; justify-content: center; gap: 8px;
+  color: var(--color-text-tertiary);
 }
 </style>

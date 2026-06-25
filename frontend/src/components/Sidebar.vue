@@ -80,46 +80,38 @@ function exitEmployeeView() {
 
 <style scoped>
 .sidebar {
+  @apply flex flex-col flex-shrink-0 h-full py-4;
   width: 200px;
   background: var(--color-background-primary);
   border-right: 0.5px solid var(--color-border-tertiary);
-  display: flex;
-  flex-direction: column;
-  padding: 16px 0;
-  flex-shrink: 0;
-  height: 100%;
 }
 .sidebar-logo {
-  padding: 0 16px 16px;
+  @apply px-4 pb-4 mb-2;
   border-bottom: 0.5px solid var(--color-border-tertiary);
-  margin-bottom: 8px;
 }
-.logo-text { font-size: 15px; font-weight: 500; color: var(--color-text-primary); }
-.logo-sub  { font-size: 11px; color: var(--color-text-tertiary); }
+.logo-text { @apply text-[15px] font-medium; color: var(--color-text-primary); }
+.logo-sub  { @apply text-[11px]; color: var(--color-text-tertiary); }
 .nav-section {
-  font-size: 10px; font-weight: 500; color: var(--color-text-tertiary);
-  padding: 12px 16px 4px; text-transform: uppercase; letter-spacing: .05em;
+  @apply text-[10px] font-medium uppercase tracking-[.05em] px-4 pt-3 pb-1;
+  color: var(--color-text-tertiary);
 }
 .nav-item {
-  display: flex; align-items: center; gap: 8px;
-  padding: 7px 16px; cursor: pointer; font-size: 13px;
-  color: var(--color-text-secondary); text-decoration: none;
-  transition: background .15s;
+  @apply flex items-center gap-2 px-4 py-[7px] cursor-pointer text-[13px] no-underline transition-colors duration-150;
+  color: var(--color-text-secondary);
 }
 .nav-item:hover { background: var(--color-background-secondary); color: var(--color-text-primary); }
-.nav-item.active { background: var(--color-background-info); color: var(--color-text-info); font-weight: 500; }
-.nav-item i { font-size: 16px; }
-.nav-badge { margin-left: auto; font-size: 10px; padding: 1px 6px; border-radius: 10px; }
-.nav-badge-blue  { background: #E6F1FB; color: #185FA5; }
-.nav-badge-amber { background: #FAEEDA; color: #854F0B; }
-.back-btn { color: var(--color-text-info) !important; font-weight: 500; }
+.nav-item.active { @apply font-medium; background: var(--color-background-info); color: var(--color-text-info); }
+.nav-item i { @apply text-base; }
+.nav-badge { @apply ml-auto text-[10px] px-[6px] py-px rounded-[10px]; }
+.nav-badge-blue  { @apply bg-[#E6F1FB] text-[#185FA5]; }
+.nav-badge-amber { @apply bg-[#FAEEDA] text-[#854F0B]; }
+.back-btn { @apply font-medium !important; color: var(--color-text-info) !important; }
 .sidebar-bottom {
-  margin-top: auto; padding: 12px 16px 0;
+  @apply mt-auto px-4 pt-3 flex flex-col gap-[10px];
   border-top: 0.5px solid var(--color-border-tertiary);
-  display: flex; flex-direction: column; gap: 10px;
 }
-.user-pill { display: flex; align-items: center; gap: 8px; }
-.user-name { font-size: 12px; font-weight: 500; color: var(--color-text-primary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.user-role { font-size: 11px; color: var(--color-text-tertiary); }
+.user-pill { @apply flex items-center gap-2; }
+.user-name { @apply text-[12px] font-medium overflow-hidden text-ellipsis whitespace-nowrap; color: var(--color-text-primary); }
+.user-role { @apply text-[11px]; color: var(--color-text-tertiary); }
 .avatar-admin { background: #EAF3DE !important; color: #3B6D11 !important; }
 </style>

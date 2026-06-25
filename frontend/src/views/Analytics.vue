@@ -162,47 +162,22 @@ watch(activeTab, async () => {
 </script>
 
 <style scoped>
-.productivity-row { display: flex; align-items: center; gap: 14px; }
-.ring-wrap  { position: relative; width: 72px; height: 72px; flex-shrink: 0; }
-.ring-wrap svg { position: absolute; top: 0; left: 0; }
-.ring-center {
-  position: absolute; top: 50%; left: 50%;
-  transform: translate(-50%, -50%); text-align: center;
-}
-.ring-val   { display: block; font-size: 15px; font-weight: 500; color: var(--color-text-primary); line-height: 1; }
-.ring-lbl   { font-size: 9px; color: var(--color-text-tertiary); }
-.ring-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); }
-.ring-sub   { font-size: 11px; color: var(--color-text-secondary); margin-top: 2px; }
-
-/* ── daily goal ────────────────────────────────────────────── */
-.goal-row {
-  display: flex; align-items: center; gap: 12px;
-}
-.goal-label {
-  font-size: 12px; font-weight: 500;
-  color: var(--color-text-secondary); white-space: nowrap;
-}
-.goal-track {
-  flex: 1; height: 10px;
-  background: var(--color-background-secondary);
-  border-radius: 6px; overflow: hidden;
-}
-.goal-fill {
-  height: 100%; border-radius: 6px;
-  transition: width .4s ease, background .3s;
-}
-.goal-text {
-  font-size: 12px; font-weight: 500;
-  color: var(--color-text-primary); white-space: nowrap;
-}
-
-/* ── weekly / monthly donut ────────────────────────────────── */
-.donut-header {
-  display: flex; align-items: center;
-  justify-content: space-between; margin-bottom: 4px;
-}
-.donut-total { font-size: 12px; color: var(--color-text-secondary); }
-.frappe-chart-wrap { width: 100%; }
+.productivity-row { @apply flex items-center gap-[14px]; }
+.ring-wrap         { @apply relative w-[72px] h-[72px] flex-shrink-0; }
+.ring-wrap svg     { @apply absolute top-0 left-0; }
+.ring-center       { @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center; }
+.ring-val          { @apply block text-[15px] font-medium leading-none; color: var(--color-text-primary); }
+.ring-lbl          { @apply text-[9px]; color: var(--color-text-tertiary); }
+.ring-title        { @apply text-[13px] font-medium; color: var(--color-text-primary); }
+.ring-sub          { @apply text-[11px] mt-[2px]; color: var(--color-text-secondary); }
+.goal-row          { @apply flex items-center gap-3; }
+.goal-label        { @apply text-[12px] font-medium whitespace-nowrap; color: var(--color-text-secondary); }
+.goal-track        { @apply flex-1 h-[10px] rounded-md overflow-hidden; background: var(--color-background-secondary); }
+.goal-fill         { @apply h-full rounded-md transition-[width,background] duration-[400ms] ease-in-out; }
+.goal-text         { @apply text-[12px] font-medium whitespace-nowrap; color: var(--color-text-primary); }
+.donut-header      { @apply flex items-center justify-between mb-1; }
+.donut-total       { @apply text-[12px]; color: var(--color-text-secondary); }
+.frappe-chart-wrap { @apply w-full; }
 
 :deep(.frappe-chart text) {
   fill: var(--color-text-secondary) !important;
